@@ -731,6 +731,10 @@ server_client_handle_key(struct client *c, key_code key)
 
 	/* Check for mouse keys. */
 	if (key == KEYC_MOUSE) {
+		// TODO: Discuss
+		m->valid = 1;
+		m->key = key;
+
 		if (c->flags & CLIENT_READONLY)
 			return;
 		key = server_client_check_mouse(c);
